@@ -17,7 +17,7 @@ def color_influence_portrayal(agent):
     return portrayal
 
 
-canvas_element = CanvasGrid(color_influence_portrayal, 10, 10, 500, 500)
+canvas_element = CanvasGrid(color_influence_portrayal, 20, 20, 500, 500)
 agent_chart = ChartModule(
     [{"Label": label, "Color": color} for (label, color) in COLORS.items()]
 )
@@ -26,9 +26,10 @@ pie_chart = PieChartModule(
 )
 
 model_params = {
-    "N": 20,
-    "height": 10,
-    "width": 10,
+    "N": 200,
+    "height": 20,
+    "width": 20,
+    "probability": UserSettableParameter("slider", "Probability", 95, 0, 100, 1),
     # "density": UserSettableParameter("slider", "Tree density", 0.65, 0.01, 1.0, 0.01),
     # "diversity": UserSettableParameter('checkbox', 'Diversity', value=False),
 }

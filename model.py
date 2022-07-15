@@ -7,11 +7,12 @@ from agents import ColorAgent
 
 class ColorModel(mesa.Model):
 
-    def __init__(self, N, width, height):
+    def __init__(self, N, width, height, probability = 95):
 
         self.num_agents = N 
         self.grid = mesa.space.MultiGrid(width, height, True)
         self.schedule = mesa.time.RandomActivation(self)
+        self.probability = probability
 
         self.datacollector = DataCollector(
             {
