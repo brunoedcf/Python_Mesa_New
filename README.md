@@ -1,4 +1,4 @@
-# Python Mesa Multi-Agent simulation
+# Python Mesa Multi-Agent Simulation
 
 Esse modelo de simulação feito no framework Mesa da linguagem Python propõe um experimento para observar a mudança da coloração de cada agente com base nas interações que fazem entre si. 
 O modelo possui uma variável independente que descreve a chance de um agente influenciar o outro a mudar para a sua própria cor. Essa variável é manipulável na interface que permite modificar o seu valor, podendo variar de 0 a 100. 
