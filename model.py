@@ -13,6 +13,7 @@ class ColorModel(mesa.Model):
         self.grid = mesa.space.MultiGrid(width, height, True)
         self.schedule = mesa.time.RandomActivation(self)
         self.probability = probability
+        self.count_steps = 0
 
         self.datacollector = DataCollector(
             {
@@ -43,6 +44,10 @@ class ColorModel(mesa.Model):
 
         self.schedule.step()
         self.datacollector.collect(self)
+        self.count_steps += 1
+
+        if self.count_steps >= 500:
+            self.running = False
 
 
     @staticmethod

@@ -27,7 +27,7 @@ class ColorAgent(mesa.Agent):
 
         chance_of_change = random.randint(1, 100)
 
-        if chance_of_change <= self.model:
+        if chance_of_change <= self.model.probability:
 
             cellmates = self.model.grid.get_cell_list_contents([self.pos])
 
