@@ -30,8 +30,6 @@ model_params = {
     "height": 20,
     "width": 20,
     "probability": UserSettableParameter("slider", "Probability", 95, 0, 100, 1),
-    # "density": UserSettableParameter("slider", "Tree density", 0.65, 0.01, 1.0, 0.01),
-    # "diversity": UserSettableParameter('checkbox', 'Diversity', value=False),
 }
 server = ModularServer(
     ColorModel, [canvas_element, agent_chart, pie_chart], "Color Influence", model_params

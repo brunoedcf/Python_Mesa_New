@@ -1,9 +1,27 @@
+from turtle import color
 import mesa
 import mesa.time
 import mesa.space
 from mesa.datacollection import DataCollector
 from agents import ColorAgent
+import matplotlib.pyplot as plt
 
+def compute_diff(model):
+    colors = {
+        '1': 0,
+        '2': 0,
+        '3': 0,
+        '4': 0,
+        '5': 0
+    }
+
+    for agent in model.schedule.agents:
+        colors[agent.color] += 1
+
+    c = list(colors.values())
+    diff = max(c) - min(c)
+
+    return diff
 
 class ColorModel(mesa.Model):
 
@@ -22,6 +40,7 @@ class ColorModel(mesa.Model):
                 "3": lambda m: self.count_type(m, "3"),
                 "4": lambda m: self.count_type(m, "4"),
                 "5": lambda m: self.count_type(m, "5"),
+                "diff": lambda m: compute_diff(self)
             }
         )
 
@@ -55,8 +74,11 @@ class ColorModel(mesa.Model):
         self.datacollector.collect(self)
         self.count_steps += 1
 
-        if self.count_steps >= 500:
-            self.running = False
+        # if self.count_steps >= 100:
+        #     self.running = False
+        #     diff = self.datacollector.get_model_vars_dataframe()
+        #     diff.to_csv("data.csv")
+        #     return
 
 
     @staticmethod
