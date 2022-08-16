@@ -28,7 +28,16 @@ class ColorModel(mesa.Model):
         # Create agents
         for i in range(self.num_agents):
 
-            a = ColorAgent(i, self)
+            if i % 5 == 0:
+                a = ColorAgent(i, self, '1')
+            elif i % 5 == 1:
+                a = ColorAgent(i, self, '2')
+            elif i % 5 == 2:
+                a = ColorAgent(i, self, '3')
+            elif i % 5 == 3:
+                a = ColorAgent(i, self, '4')
+            elif i % 5 == 4:
+                a = ColorAgent(i, self, '5')
 
             self.schedule.add(a)
 

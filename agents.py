@@ -3,15 +3,21 @@ import mesa.time
 import mesa.space
 import random
 
-colors = ['1', '2', '3', '4', '5']
+colors = {
+    '1':'1',
+    '2':'2',
+    '3':'3',
+    '4':'4',
+    '5':'5',
+}
 
 class ColorAgent(mesa.Agent):
 
-    def __init__(self, unique_id, model):
+    def __init__(self, unique_id, model, clr):
 
         super().__init__(unique_id, model)
 
-        self.color = random.choice(colors)
+        self.color = colors[clr];
 
     def move(self):
 
@@ -42,7 +48,7 @@ class ColorAgent(mesa.Agent):
 
         else:
 
-            self.color = random.choice(colors)
+            self.color = colors[str(random.randint(1, 5))]
 
         
     def step(self):
