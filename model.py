@@ -4,7 +4,6 @@ import mesa.time
 import mesa.space
 from mesa.datacollection import DataCollector
 from agents import ColorAgent
-import matplotlib.pyplot as plt
 
 def compute_diff(model):
     colors = {
