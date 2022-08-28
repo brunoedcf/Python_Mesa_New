@@ -1,7 +1,10 @@
-# from visualization import server
+# To see the simulation interface
 
-# server.launch()
+from visualization import server
 
+server.launch()
+
+# Batch run experiments
 
 from model import ColorModel
 import mesa
