@@ -24,7 +24,7 @@ def compute_diff(model):
 
 class ColorModel(mesa.Model):
 
-    def __init__(self, N, width, height, probability = 95):
+    def __init__(self, N, width, height, probability):
 
         self.num_agents = N 
         self.grid = mesa.space.MultiGrid(width, height, True)

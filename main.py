@@ -1,8 +1,8 @@
 # To see the simulation interface
 
-from visualization import server
+# from visualization import server
 
-server.launch()
+# server.launch()
 
 # Batch run experiments
 
@@ -11,7 +11,7 @@ import mesa
 import pandas as pd
 
 
-params = {"width": 20, "height": 20, "N": 200}
+params = {"width": 20, "height": 20, "N": 200, "probability": 100}
 
 results = mesa.batch_run(
     ColorModel,
